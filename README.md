@@ -36,7 +36,7 @@ already time warped a bunch of times.
 - Set up the game:
     - Dismiss the upgrade thing that covers the team info pane
     - Enable idle mode for your click weapons
-    - Set the buy mode (in the bottom left corner) to 'until upgrade' (xU)
+    - Set the buy mode (in the bottom left corner) to Max
     - You might also want to disable screen post effects and screen shake,
       that's up to you
 - Hit enter in your terminal again

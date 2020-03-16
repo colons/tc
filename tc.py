@@ -53,7 +53,7 @@ def interactive():
     input(
         "hit enter when you've clicked 'play', dismissed the update, "
         "enabled idle mode for your click weapons, and set the buy mode to "
-        "'until upgrade'"
+        "'max'"
     )
     loop(driver)
 

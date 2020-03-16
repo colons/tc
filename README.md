@@ -29,8 +29,11 @@ already time warped a bunch of times.
 
 ### Usage
 
-- Run `TC_USERNAME=[your time gamers username] TC_PASSWORD=[your time gamers password] python tc.py`
+- Run `TC_USERNAME=[your time gamers username] TC_PASSWORD=[your time gamers
+  password] python tc.py`
 - Wait, and _do not move your mouse over the Chrome window_
+- After a minute or so, the settings page will appear for a moment to disable
+  screen shake and post effects, and then the automation will begin.
 - Leave it running until you want to time warp or spend Weapon Cubes, at which
   point you should interrupt the process in your terminal and do so in another
   instance of the game.

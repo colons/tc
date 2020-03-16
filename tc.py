@@ -56,7 +56,7 @@ def tc(username, password):
     form.find_element_by_id('ctrl_pageLogin_password').send_keys(password)
     form.find_element_by_css_selector('[type=submit]').click()
     driver.find_element_by_css_selector('.navTab.account')
-    driver.get('http://www.timegamers.com/TimeClickers/WebGL/')
+    driver.get('http://www.timegamers.com/TimeClickers/WebGL/#unityFrame')
 
     sleep(30)  # hopefully the game will load in this time
 

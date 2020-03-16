@@ -51,6 +51,7 @@ def tc(username, password):
     driver = webdriver.Chrome()
     driver.implicitly_wait(5)
     driver.get('http://www.timegamers.com/login/')
+    print('logging in')
     form = driver.find_element_by_id('pageLogin')
     form.find_element_by_id('ctrl_pageLogin_login').send_keys(username)
     form.find_element_by_id('ctrl_pageLogin_password').send_keys(password)
@@ -58,7 +59,8 @@ def tc(username, password):
     driver.find_element_by_css_selector('.navTab.account')
     driver.get('http://www.timegamers.com/TimeClickers/WebGL/#unityFrame')
 
-    sleep(30)  # hopefully the game will load in this time
+    print('waiting thirty seconds for the game to load')
+    sleep(30)
 
     frame = driver.find_element_by_id('unityFrame')
     action = ActionChains(driver)
@@ -82,7 +84,10 @@ def tc(username, password):
     for i in range(3):
         click_at_ratio(action, frame, .03, .95)
 
+    print('setting things up')
     action.perform()
+
+    print('running loop!')
     loop(driver)
 
 

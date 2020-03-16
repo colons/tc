@@ -29,20 +29,15 @@ already time warped a bunch of times.
 
 ### Usage
 
-- Run `python tc.py`
-- Log in to your Time Gamers account in the Chrome window that appears
-- Once the homepage starts loading, hit enter in your terminal
-- Wait for the game to load (which can take a while)
-- Set up the game:
-    - Dismiss the upgrade thing that covers the team info pane
-    - Enable idle mode for your click weapons
-    - Set the buy mode (in the bottom left corner) to Max
-    - You might also want to disable screen post effects and screen shake,
-      that's up to you
-- Hit enter in your terminal again
+- Run `TC_USERNAME=[your time gamers username] TC_PASSWORD=[your time gamers password] python tc.py`
+- Wait, and _do not move your mouse over the Chrome window_
 - Leave it running until you want to time warp or spend Weapon Cubes, at which
   point you should interrupt the process in your terminal and do so in another
   instance of the game.
 
+Once it's up and running, it'll just keep going. Be careful when mousing over
+the window, since the mouse will be clicking constantly while you're there.
+
 The game uploads a cloud save pretty often, but if you want to ensure you're up
-to date, hover your mouse over the cloud icon in the top right before quitting.
+to date, carefully hover your mouse over the cloud icon in the top right before
+quitting.

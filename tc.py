@@ -10,7 +10,7 @@ INTERVAL = 0.04
 
 def get_driver():
     options = webdriver.ChromeOptions()
-    options.add_argument('headless')
+    # options.add_argument('headless')
     options.add_argument('window-size=1200x800')
     driver = webdriver.Chrome(options=options)
     driver.implicitly_wait(5)
@@ -84,9 +84,9 @@ def tc(username, password):
     click_at_ratio(action, frame, .25, .05)
 
     # turn idle mode on for weapons
-    click_at_ratio(action, frame, .29, .96)
-    click_at_ratio(action, frame, .71, .96)
-    # XXX idk where the button is for the third weapon
+    click_at_ratio(action, frame, .29, .96)  # launcher
+    click_at_ratio(action, frame, .45, .96)  # cannon
+    click_at_ratio(action, frame, .71, .96)  # pistol
 
     # set upgrade mode to max
     for i in range(3):

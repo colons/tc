@@ -10,7 +10,7 @@ INTERVAL = 0.04
 
 def get_driver():
     options = webdriver.ChromeOptions()
-    # options.add_argument('headless')
+    options.add_argument('headless')
     options.add_argument('window-size=1200x800')
     driver = webdriver.Chrome(options=options)
     driver.implicitly_wait(5)

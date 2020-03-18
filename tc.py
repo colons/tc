@@ -8,6 +8,15 @@ from selenium.webdriver.common.action_chains import ActionChains
 INTERVAL = 0.04
 
 
+def get_driver():
+    options = webdriver.ChromeOptions()
+    options.add_argument('headless')
+    options.add_argument('window-size=1200x800')
+    driver = webdriver.Chrome(options=options)
+    driver.implicitly_wait(5)
+    return driver
+
+
 def click_at_ratio(action, frame, x, y):
     height = frame.size['height']
     width = frame.size['width']
@@ -48,8 +57,7 @@ def loop(driver):
 
 
 def tc(username, password):
-    driver = webdriver.Chrome()
-    driver.implicitly_wait(5)
+    driver = get_driver()
     driver.get('http://www.timegamers.com/login/')
     print('logging in')
     form = driver.find_element_by_id('pageLogin')

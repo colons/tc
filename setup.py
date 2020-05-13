@@ -4,7 +4,7 @@ with open('README.rst') as readme_file:
     README = readme_file.read()
 
 setup(
-    name='tc',
+    name='tc-player',
     description='A Time Clickers automaton.',
     url='https://github.com/colons/tc',
     author='colons',

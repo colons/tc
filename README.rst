@@ -28,9 +28,13 @@ Requirements
 ~~~~~~~~~~~~
 
 -  A Time Gamers account with a Time Clickers save synced to it
--  Python 3
+-  Python 3 & pip
 -  chromedriver (probably in your system’s package manager)
--  selenium (from pypi)
+
+Installation
+~~~~~~~~~~~~
+
+-  ``pip install tc-player``
 
 Usage
 ~~~~~
@@ -47,7 +51,7 @@ with ``^c`` whenever you like.
 But I want to see what’s going on as it happens!
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  Add ``TC_VISIBLE=1 `` to the front of the above invocation.
+-  Add ``TC_VISIBLE=1`` to the environment.
 -  Wait.
 -  After a minute or so, the settings page will appear for a moment to
    disable screen shake and post effects, and then the automation will

@@ -1,16 +1,34 @@
-from os import environ
 from time import sleep
 
 from selenium import webdriver
+from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.action_chains import ActionChains
 
 
 INTERVAL = 0.05
 
 
-def get_driver():
+class TCException(RuntimeError):
+    tc_message = None
+
+    def __init__(self, message=None, *a, **k):
+        super().__init__(message or self.tc_message, *a, **k)
+
+
+class TCLoginException(TCException):
+    tc_message = 'Failed to log in; please check your Time Gamers credentials.'
+
+
+class TCLoadException(TCException):
+    tc_message = (
+        "Couldn't load the Time Gamers website. "
+        "Maybe your network connection is down?"
+    )
+
+
+def get_driver(visible):
     options = webdriver.ChromeOptions()
-    if not environ.get('TC_VISIBLE'):
+    if not visible:
         options.add_argument('headless')
     options.add_argument('window-size=1200x800')
     driver = webdriver.Chrome(options=options)
@@ -57,15 +75,22 @@ def loop(driver):
         action.perform()
 
 
-def tc(username, password):
-    driver = get_driver()
+def _tc(driver, username, password):
     driver.get('http://www.timegamers.com/login/')
-    print('logging in')
-    form = driver.find_element_by_id('pageLogin')
+
+    try:
+        form = driver.find_element_by_id('pageLogin')
+    except NoSuchElementException:
+        raise TCLoadException()
+
     form.find_element_by_id('ctrl_pageLogin_login').send_keys(username)
     form.find_element_by_id('ctrl_pageLogin_password').send_keys(password)
     form.find_element_by_css_selector('[type=submit]').click()
-    driver.find_element_by_css_selector('.navTab.account')
+    try:
+        driver.find_element_by_css_selector('.navTab.account')
+    except NoSuchElementException:
+        raise TCLoginException()
+
     driver.get('http://www.timegamers.com/TimeClickers/WebGL/#unityFrame')
 
     print('waiting thirty seconds for the game to load')
@@ -101,7 +126,9 @@ def tc(username, password):
     loop(driver)
 
 
-if __name__ == '__main__':
-    username = environ['TC_USERNAME']
-    password = environ['TC_PASSWORD']
-    tc(username, password)
+def tc(username, password, visible=False):
+    driver = get_driver(visible)
+    try:
+        _tc(driver, username, password)
+    finally:
+        driver.quit()

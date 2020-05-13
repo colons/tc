@@ -5,7 +5,7 @@ from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 
 
-INTERVAL = 0.04
+INTERVAL = 0.05
 
 
 def get_driver():
@@ -78,11 +78,12 @@ def tc(username, password):
     click_at_ratio(action, frame, .5, .55)
     action.pause(20)  # another unchecked load wait
 
-    # open settings, disable screen shake and post effects, and close settings
-    click_at_ratio(action, frame, .25, .05)
-    click_at_ratio(action, frame, .04, .23)
-    click_at_ratio(action, frame, .04, .45)
-    click_at_ratio(action, frame, .25, .05)
+    click_at_ratio(action, frame, .25, .05)  # open settings
+    click_at_ratio(action, frame, .04, .23)  # disable screen shake
+    click_at_ratio(action, frame, .04, .38)  # reduce particles
+    click_at_ratio(action, frame, .04, .45)  # disable post effects
+    click_at_ratio(action, frame, .04, .6)  # reduce framerate
+    click_at_ratio(action, frame, .25, .05)  # close settings
 
     # turn idle mode on for weapons
     click_at_ratio(action, frame, .29, .96)  # launcher

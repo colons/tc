@@ -36,7 +36,7 @@ Usage
 ~~~~~
 
 -  Run
-   ``TC_USERNAME=[your time gamers username] TC_PASSWORD=[your time gamers   password] python tc.py``.
+   ``TC_USERNAME=[your time gamers username] TC_PASSWORD=[your time gamers password] python tc.py``.
 -  Use the
    `leaderboards <http://www.timegamers.com/TimeClickers/LiveLeaderboard/>`__
    or your profile page to check your progress.

@@ -30,8 +30,16 @@ already time warped a bunch of times.
 ### Usage
 
 - Run `TC_USERNAME=[your time gamers username] TC_PASSWORD=[your time gamers
-  password] python tc.py`
-- Wait, and _do not move your mouse over the Chrome window_
+  password] python tc.py`.
+- Use the [leaderboards][lb] or your profile page to check your progress.
+
+The game uploads a cloud save every minute or so, so you can interrupt with
+`^c` whenever you like.
+
+#### But I want to see what's going on as it happens!
+
+- Add `TC_VISIBLE=1 ` to the front of the above invocation.
+- Wait.
 - After a minute or so, the settings page will appear for a moment to disable
   screen shake and post effects, and then the automation will begin.
 - Leave it running until you want to time warp or spend Weapon Cubes, at which
@@ -41,6 +49,4 @@ already time warped a bunch of times.
 Once it's up and running, it'll just keep going. Be careful when mousing over
 the window, since the mouse will be clicking constantly while you're there.
 
-The game uploads a cloud save pretty often, but if you want to ensure you're up
-to date, carefully hover your mouse over the cloud icon in the top right before
-quitting.
+[lb]: http://www.timegamers.com/TimeClickers/LiveLeaderboard/

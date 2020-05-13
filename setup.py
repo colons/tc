@@ -9,7 +9,7 @@ setup(
     url='https://github.com/colons/tc',
     author='colons',
     author_email='pypi@colons.co',
-    version='1.0.0',
+    version='1.0.1',
     license='LICENSE',
     platforms=['any'],
     packages=['tc'],
